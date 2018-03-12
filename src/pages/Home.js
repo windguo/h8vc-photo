@@ -445,6 +445,9 @@ export default class Home extends Component {
         }catch (e){ this.ToastShow(e.message);}
 
     }
+    navigateToDetail = () => {
+        this.props.navigation.navigate('Detail');
+    }
   //ref={(c) => {this.refTextArray.push(c)}}
 //<Text style={{color: '#D3D3D3', marginLeft: 10}}>{formatData(item.newstime)}</Text>
    // item.smalltext && item.smalltext.replace(/\s+/g, "")
@@ -469,7 +472,7 @@ export default class Home extends Component {
                             lineHeight: 26,
                             color:item.isCopyed ? '#666666' : 'black',
                             fontWeight:'100'
-                        }}>{item.smalltext && item.smalltext.replace(/^(\r\n)|(\n)|(\r)/,"")}</Text>
+                        }} onPress={this.navigateToDetail}>{item.smalltext && item.smalltext.replace(/^(\r\n)|(\n)|(\r)/,"")}</Text>
                         <View
                             style={{
                                 flexDirection: 'row',
